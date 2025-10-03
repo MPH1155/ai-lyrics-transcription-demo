@@ -8,7 +8,7 @@
 
 🌐 **[View Static Demo Page](https://YOUR_USERNAME.github.io/whisper-lyrics-demo/)** | 🚀 **[Try Live Demo on HF Spaces](https://huggingface.co/spaces/YOUR_USERNAME/whisper-lyrics-demo)**
 
-![Demo Preview](docs/screenshots/results.png)
+![Demo Preview](docs/screenshots/results.jpg)
 
 ## ✨ Features
 
@@ -50,10 +50,8 @@ python -m uvicorn app:app --host 127.0.0.1 --port 8000
 
 <table>
   <tr>
-    <td><img src="docs/screenshots/upload.png" alt="Upload Interface" width="400"/></td>
-  </tr>
-  <tr>
-    <td colspan="2"><img src="docs/screenshots/results.png" alt="Results Page" width="800"/></td>
+    <td><img src="docs/screenshots/upload.jpg" alt="Upload Interface" width="400"/></td>
+    <td><img src="docs/screenshots/results.jpg" alt="Results Page" width="400"/></td>
   </tr>
 </table>
 
@@ -78,9 +76,9 @@ Comprehensive training metrics including loss curves, learning rate schedules, a
 <img src="docs/screenshots/training_graphs.png" alt="Training Metrics Dashboard" width="800"/>
 
 **Key Results:**
-- **Base Whisper WER**: [TBD]%
-- **Fine-Tuned WER**: [TBD]%
-- **Improvement**: [TBD]%
+- **Base Whisper WER**: [145.58]%
+- **Fine-Tuned WER**: [89.07]%
+- **Improvement**: [56.51]%
 - **Training Dataset**: 100+ song lyrics
 
 For detailed metrics and interactive SVG graphs, see [graphs/README.md](graphs/README.md).
