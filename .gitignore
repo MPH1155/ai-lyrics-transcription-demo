@@ -1,0 +1,78 @@
+# Python cache
+__pycache__/**
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Environments
+.env
+.env.*
+.venv/
+venv/
+
+# IDE/editor
+.vscode/
+.idea/
+*.code-workspace
+
+# Logs & checkpoints
+logs/
+**/events.out.tfevents.*
+checkpoints/
+*.log
+
+# Model artifacts
+whisper-finetuned/
+whisper-fine-tuned/
+models/
+*.safetensors
+*.bin
+*.ckpt
+
+# Data (raw + processed)
+original_data/
+data/
+youtube_download/
+user_uploaded_files/
+user_output/
+fromthescreen/
+archive.txt
+
+# Audio & media
+*.wav
+*.mp3
+*.mp4
+*.webm
+*.opus
+
+# Notebooks checkpoints
+*.ipynb_checkpoints
+
+# Generated CSVs
+*.csv
+!configs/sample_dataset_schema.csv
+
+# PDFs / reports (optional keep if needed)
+*.pdf
+!
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary
+.tmp/
+*.tmp
+
+# Hugging Face cache
+~/.cache/huggingface/
+.hf_cache/
+
+# Misc
+*.bak
+huggingface_api.py
+
+# Training/evaluation outputs
+scripts/*.csv
+scripts/*.txt

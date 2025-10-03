@@ -1,0 +1,17 @@
+sdk: docker
+app_port: 7860
+license: mit
+title: "Whisper Lyrics Transcription Demo"
+emoji: 🎵
+colorFrom: purple
+colorTo: blue
+sdk_version: "3.10"
+app_file: app.py
+pinned: false
+tags:
+  - whisper
+  - lyrics
+  - transcription
+  - audio
+  - music
+  - fastapi
