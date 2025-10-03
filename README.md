@@ -29,8 +29,8 @@
 ### Local Setup
 ```bash
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/whisper-lyrics-demo.git
-cd whisper-lyrics-demo
+git clone https://github.com/MPH1155/ai-lyrics-transcription-demo.git
+cd ai-lyrics-transcription-demo
 
 # Create virtual environment
 python -m venv .venv
@@ -70,37 +70,88 @@ graph LR
     F --> E
 ```
 
-## 2. Current Repository Status
-This is an in-progress cleanup. Planned refactor will move ad-hoc scripts into a package structure under `src/` with a unified CLI. See `Roadmap` below.
+## 📊 Training & Evaluation Metrics
 
-## 3. Directory Overview (current state)
+### Training Progress
+Comprehensive training metrics including loss curves, learning rate schedules, and performance graphs are available in the [`graphs/`](graphs/) directory.
+
+<img src="docs/screenshots/training_graphs.png" alt="Training Metrics Dashboard" width="800"/>
+
+**Key Results:**
+- **Base Whisper WER**: [TBD]%
+- **Fine-Tuned WER**: [TBD]%
+- **Improvement**: [TBD]%
+- **Training Dataset**: 100+ song lyrics
+
+For detailed metrics and interactive SVG graphs, see [graphs/README.md](graphs/README.md).
+
+---
+
+## 📁 Project Structure
+
 ```
-project/
-  training.py                # Fine-tuning script
-  eval_with_HGFdata.py       # WER evaluation on public dataset
-  eval_with_full_song_data.py# WER eval on combined custom splits
-  web_app.py                 # FastAPI demo (upload -> separate -> transcribe)
-  vocal_seperator.py         # Uses audio-separator lib
-  lyrics_transcripter.py     # Functions for base + fine-tuned transcription
-  create_dataset.py          # Build CSV from raw audio + lyrics
-  upload_dataset.py          # Push dataset to HF Hub
-  huggingface_api.py         # (Will be removed) contains hard-coded tokens
-  requirements.txt
-  .gitignore
-  README.md
-  data/                      # (ignored) working audio
-  original_data/             # (ignored) raw collected dataset
-  whisper-finetuned/         # (ignored) fine-tuned model artifacts
-  logs/                      # training logs (ignored)
+ai-lyrics-transcription-demo/
+├── app.py                      # Main FastAPI application
+├── vocal_seperator.py          # Vocal separation logic
+├── requirements.txt            # Python dependencies
+├── Dockerfile                  # HF Space deployment
+├── space.yml                   # HF Space configuration
+├── src/
+│   └── lyrics_asr/             # Core transcription package
+│       ├── __init__.py
+│       └── infer.py            # Inference functions
+├── scripts/                    # Training & evaluation scripts
+│   ├── training.py             # Fine-tuning script
+│   ├── eval_with_HGFdata.py    # WER evaluation (public dataset)
+│   ├── eval_with_full_song_data.py  # WER eval (custom dataset)
+│   ├── create_dataset.py       # Dataset creation
+│   ├── upload_dataset.py       # Upload to HF Hub
+│   └── song_downloader.py      # YouTube audio downloader
+├── graphs/                     # Training/eval visualizations
+│   ├── train/                  # Training metrics (SVGs)
+│   ├── eval/                   # Evaluation metrics (SVGs)
+│   └── README.md               # Metrics documentation
+├── docs/
+│   ├── index.html              # GitHub Pages showcase
+│   └── screenshots/            # UI screenshots
+└── tests/                      # Unit tests
+    ├── test_api.py
+    └── test_infer.py
 ```
 
-## 4. Installation
+---
+
+## 🔧 Advanced Usage
+
+### Training the Model
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
-pip install --upgrade pip
-pip install -r requirements.txt
+cd scripts
+python training.py
 ```
+Outputs:
+- Fine-tuned model: `./models/whisper-small-finetuned/`
+- Training logs: `./logs/`
+- Metrics graphs: `./graphs/train/`
+
+### Evaluating Performance
+```bash
+# Evaluate on public dataset
+python scripts/eval_with_HGFdata.py
+
+# Evaluate on custom dataset
+python scripts/eval_with_full_song_data.py
+```
+
+Results are saved as SVG graphs in `./graphs/eval/`.
+
+### Environment Variables
+Create a `.env` file (see `.env.example`):
+```bash
+FINETUNED_MODEL_ID=MPH1155/whisper-fine-tuned
+HF_TOKEN=your_token_here  # Optional, for private models
+```
+
+---
 
 ## 5. Hugging Face Authentication
 Do NOT hardcode tokens. Export environment variables instead:
@@ -198,9 +249,9 @@ Planned improvements: remove duplicated logic, centralize device selection, use 
 ## 13. Evaluation Metrics Snapshot (example)
 | Model | WER (eval set) |
 |-------|----------------|
-| Base Whisper Small | TBD |
-| Fine-tuned | TBD |
-| Improvement | TBD |
+| Base Whisper Small | 1.4558 |
+| Fine-tuned | 0.8907 |
+| Improvement | 0.5651 |
 
 ## 14. Contributing (Future)
 Style: black + ruff
