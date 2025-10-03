@@ -1,12 +1,12 @@
 # 🎵 Lyrics Transcription & Vocal Separation - AI-Powered Song Lyrics Extraction
 
-[![Live Demo](https://img.shields.io/badge/🤗-Live_Demo-yellow)](https://huggingface.co/spaces/YOUR_USERNAME/whisper-lyrics-demo)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/YOUR_USERNAME/whisper-lyrics-demo)
+[![Live Demo](https://img.shields.io/badge/🤗-Live_Demo-yellow)](https://huggingface.co/spaces/MPH1155/ai-lyrics-transcription-demo)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/MPH1155/ai-lyrics-transcription-demo)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 > **Fine-tuned OpenAI Whisper model with automatic vocal separation for accurate song lyrics transcription. Compare base vs. fine-tuned performance in real-time.**
 
-🌐 **[View Static Demo Page](https://YOUR_USERNAME.github.io/whisper-lyrics-demo/)** | 🚀 **[Try Live Demo on HF Spaces](https://huggingface.co/spaces/YOUR_USERNAME/whisper-lyrics-demo)**
+🌐 **[View Static Demo Page](https://mph1155.github.io/ai-lyrics-transcription-demo/)** | 🚀 **[Try Live Demo on HF Spaces](https://huggingface.co/spaces/MPH1155/ai-lyrics-transcription-demo)**
 
 ![Demo Preview](docs/screenshots/results.jpg)
 
